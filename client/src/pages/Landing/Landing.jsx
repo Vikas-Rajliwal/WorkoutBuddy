@@ -1,7 +1,7 @@
 //pages/Landing/Landing.jsx
 
 import React, { useContext } from "react";
-import "./landing.css";
+import "./Landing.css";
 import { AuthContext } from "../../AuthContext";
 import { Link } from "react-router-dom";
 
