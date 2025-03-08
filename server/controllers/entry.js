@@ -1,9 +1,9 @@
 //controllers/entry.js
 
-import Entry from "../models/entry.js"
+import Entry from "../models/Entry.js"
 import User from "../models/User.js"
-import Routine from "../models/routine.js"
-import Meal from "../models/meal.js"
+import Routine from "../models/Routine.js"
+import Meal from "../models/Meal.js"
 
 export const createEntry = async (req, res, next) => {
 

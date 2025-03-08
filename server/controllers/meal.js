@@ -1,6 +1,6 @@
-//controllers/meal.js
+//controllers/meal.
 
-import Meal from "../models/meal.js"
+import Meal from "../models/Meal.js"
 import User from "../models/User.js"
 
 export const createMeal = async (req, res, next) => {
@@ -11,6 +11,7 @@ export const createMeal = async (req, res, next) => {
 
         try {
             const user = await User.findById(savedMeal.author);
+
             user.meals.push(savedMeal._id);
             await user.save();
         }
