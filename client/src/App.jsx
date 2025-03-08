@@ -8,7 +8,7 @@ import Entries from "./pages/Entry/Entries";
 import Routines from "./pages/Routine/Routines";
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
-import Home from "./pages/home/Home";
+import Home from "./pages/home/home";
 import Meal from "./pages/Meal/Meal";
 
 function App() {
