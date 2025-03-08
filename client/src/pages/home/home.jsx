@@ -4,7 +4,7 @@ import React from 'react'
 import "./home.css"
 import Navbar from "../../components/NavBar/NavBar"
 import Footer from "../../components/Footer/Footer"
-import HomeComp from '../../components/homeComp/HomeComp'
+import HomeComp from '../../components/homeComp/homeComp'
 
 
 const Home = () => {
