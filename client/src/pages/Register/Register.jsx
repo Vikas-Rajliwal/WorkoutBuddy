@@ -42,7 +42,7 @@ function Register() {
                     profilePicture: url,
                 };
 
-                await axios.post("http://localhost:8000/api/auth/register", newUser, { withcredentials: false })
+                await axios.post("https://workoutbuddy-l3uu.onrender.com/api/auth/register", newUser, { withcredentials: false })
 
                 navigate("/login");
             } catch (err) {

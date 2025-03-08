@@ -51,7 +51,7 @@ const CreateRoutine = ({ setOpen }) => {
     setError("");
     // console.log("Submitting data:", formData);
     try {
-      const response = await axios.post("http://localhost:8000/api/routines/", formData);
+      const response = await axios.post("https://workoutbuddy-l3uu.onrender.com/api/routines/", formData);
 
       if (response.data) {
         setOpen(false);

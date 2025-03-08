@@ -12,7 +12,7 @@ const Meal = () => {
   const { user } = useContext(AuthContext);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const { data, loading, error } = useFetch(
-    `http://localhost:8000/api/meals/${user?._id}`
+    `https://workoutbuddy-l3uu.onrender.com/api/meals/${user?._id}`
   );
 
   if (!user) {

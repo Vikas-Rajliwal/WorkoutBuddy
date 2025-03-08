@@ -39,7 +39,7 @@ const CreateMeal = ({ setOpen }) => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8000/api/meals/", formData);
+      const response = await axios.post("https://workoutbuddy-l3uu.onrender.com/api/meals/", formData);
 
       if (response.data) {
         setOpen(false);
