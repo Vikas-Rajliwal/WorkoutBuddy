@@ -13,7 +13,7 @@ const Landing = () => {
       <div className="header"></div>
       <div className="upper-layer">
         <h1>
-          Welcome to <span className="brand-name">ShapeSync</span>
+          Welcome to <span className="brand-name">Workout Buddy</span>
         </h1>
         <Link to={user ? "/home" : "/login"}>
           <button className="btn-get-started">Get Started</button>

@@ -1,8 +1,17 @@
 /* pages/Landing/landing.css */
 
+:root {
+    --primary-bg: linear-gradient(310deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    --text-dark: #222222;
+    --text-light: #555555;
+    --btn-primary: #FF5722;  /* Vibrant Orange */
+    --btn-hover: #FF8A50;  /* Lighter Orange */
+    --highlight: #4CAF50;  /* Fresh Green */
+}
+
 .landing {
     position: relative;
-    background-color: black;
+    background-color: #FFFFFF;
 }
 
 .landing .header {
@@ -12,28 +21,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(236, 96, 89);
-    background: linear-gradient(310deg, rgba(236, 96, 89, 1) 0%,
-            rgba(255, 218, 126, 1) 28%, rgba(255, 94, 74, 1) 100%);
+    background: var(--primary-bg);
+    text-align: center;
 }
 
-
+/* Get Started Button */
 .btn-get-started {
-    background-color: var(--dark-red);
-    border: 1px solid white;
-    outline: none;
+    background-color: var(--btn-primary);
+    border: none;
     color: white;
-    padding: 15px 25px;
+    padding: 15px 30px;
     font-family: "Dosis", sans-serif;
     cursor: pointer;
     font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;  /* Smooth rounded edges */
     transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.3);
 }
 
 .btn-get-started:hover {
-    font-size: 1.6rem;
+    background-color: var(--btn-hover);
+    transform: scale(1.08);
+    box-shadow: 0px 6px 15px rgba(255, 87, 34, 0.4);
 }
 
+/* Upper Layer */
 .upper-layer {
     position: absolute;
     top: 50%;
@@ -42,24 +55,44 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 100px;
+    gap: 80px;
     align-items: center;
     justify-content: center;
 }
 
+/* Heading */
 .upper-layer h1 {
-    background-color: rgba(160, 46, 46, 0.448);
-    color: azure;
-    width: 50%;
-    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
+    width: 60%;
+    font-weight: 700;
+    font-size: 2.2rem;
     text-align: center;
-    padding: 50px 0;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Highlighted Text */
 .upper-layer h1 span {
-    color: white;
+    color: var(--highlight);
     font-family: "Rubik Doodle Shadow", system-ui;
     font-style: italic;
     font-weight: 900;
     padding: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upper-layer h1 {
+        width: 80%;
+        font-size: 1.8rem;
+    }
+
+    .btn-get-started {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+    }
 }

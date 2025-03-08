@@ -1,155 +1,209 @@
 /* pages/Entry/entry.css */
 
 .entry {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: #f5f7fa;
+    background: var(--bg-primary);
+}
+
+.pageHeader {
+    padding: 2rem 2rem 0;
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pageHeader h1 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.createButton {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .entriesContainer {
     flex: 1;
     padding: 2rem;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    max-width: 1800px;
     margin: 0 auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    box-sizing: border-box;
 }
 
 .entryItem {
-    background: white;
-    border-radius: 12px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-height: 500px;
-    overflow-y: auto;
 }
 
 .entryItem:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .entryItem h1 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0;
+    text-align: center;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e9ecef;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1;
+    border-bottom: 2px solid var(--accent-primary);
 }
 
-.entryItem h2 {
-    font-size: 1.2rem;
-    color: #34495e;
-    margin: 1rem 0 0.5rem;
-    font-weight: 600;
+.entryContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.entryContent h2 {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .mealsContainer,
 .routinesContainer {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .mealItem,
 .routineItem {
-    background-color: #e3f2fd;
-    color: #1976d2;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    background: var(--bg-primary);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
     font-size: 0.9rem;
-    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    transition: background-color 0.2s;
+    justify-content: space-between;
 }
 
-.mealItem {
-    background-color: #e8f5e9;
-    color: #2e7d32;
-}
-
-.routineItem {
-    background-color: #fff3e0;
-    color: #f57c00;
-}
-
-.mealItem:hover {
-    background-color: #c8e6c9;
-}
-
+.mealItem:hover,
 .routineItem:hover {
-    background-color: #ffe0b2;
+    background: var(--accent-primary);
+    color: white;
+    transform: translateX(5px);
 }
 
-/* Custom scrollbar for entry items */
-.entryItem::-webkit-scrollbar {
-    width: 6px;
-}
-
-.entryItem::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.entryItem::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 10px;
-}
-
-.entryItem::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8;
-}
-
-/* Empty state */
 .noEntries {
     grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
     text-align: center;
-    padding: 3rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .noEntries h2 {
-    color: #2c3e50;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--text-primary);
 }
 
 .noEntries p {
-    color: #7f8c8d;
-    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+.helper-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1600px) {
     .entriesContainer {
-        padding: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .entriesContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .pageHeader h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .entriesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem;
+    }
+    
+    .pageHeader {
+        padding: 1.5rem 1.5rem 0;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .entriesContainer {
         grid-template-columns: 1fr;
+        padding: 1rem;
     }
 
     .entryItem {
         padding: 1rem;
     }
-
-    .entryItem h1 {
-        font-size: 1.25rem;
+    
+    .pageHeader {
+        padding: 1rem 1rem 0;
     }
-
-    .entryItem h2 {
-        font-size: 1.1rem;
+    
+    .pageHeader h1 {
+        font-size: 1.5rem;
+    }
+    
+    .createButton {
+        width: 100%;
     }
 }
