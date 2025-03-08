@@ -1,7 +1,7 @@
 //pages/Routine/Routines.jsx
 
 import React, { useContext } from "react";
-import Navbar from "../../components/Navbar/Navbar.jsx";
+import Navbar from "../../components/NavBar/NavBar.jsx";
 import Footer from "../../components/Footer/Footer";
 import useFetch from "../../useFetch";
 import { AuthContext } from "../../AuthContext";

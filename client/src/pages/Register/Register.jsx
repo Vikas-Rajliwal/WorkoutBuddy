@@ -1,7 +1,7 @@
 //pages/Register/Register.jsx
 
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import "./register.css";
 import { Link } from "react-router-dom";
