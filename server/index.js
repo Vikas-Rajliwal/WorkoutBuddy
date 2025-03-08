@@ -39,7 +39,11 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // This allows all domains
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(morgan("common"));
 
