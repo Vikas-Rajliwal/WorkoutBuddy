@@ -50,7 +50,7 @@ function Register() {
             }
         } else {
             try {
-                await axios.post("http://localhost:8000/api/auth/register", info, { withcredentials: true })
+                await axios.post("https://workoutbuddy-l3uu.onrender.com/api/auth/register", info, { withcredentials: true })
 
                 navigate("/login");
             } catch (err) {
