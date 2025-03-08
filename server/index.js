@@ -48,6 +48,6 @@ app.use("/api/routines", routineRoute);
 app.use("/api/meals", mealRoute);
 
 app.listen(PORT, () => {
-    console.log(`post is ${PORT}`);
+    console.log(`port is ${PORT}`);
     connect();
 });
