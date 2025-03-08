@@ -2,7 +2,7 @@
 
 import React from "react";
 import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/NavBar/NavBar";
 import "./login.css";
 import axios from "axios";
 import { useContext, useState } from "react";
