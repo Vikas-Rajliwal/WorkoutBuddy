@@ -1,0 +1,219 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root {
+    /* Main Colors */
+    --bg-primary: #0A0F1C;
+    --bg-secondary: #1A1F2E;
+    --accent-primary: #FF3C38;
+    --accent-secondary: #00E1D9;
+    --accent-tertiary: #7B61FF;
+    
+    /* Text Colors */
+    --text-primary: #FFFFFF;
+    --text-secondary: #B4B9C0;
+    --text-muted: #6C7293;
+    
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(135deg, #FF3C38 0%, #FF8038 100%);
+    --gradient-secondary: linear-gradient(135deg, #00E1D9 0%, #00B3FF 100%);
+    
+    /* Status Colors */
+    --success: #00E676;
+    --warning: #FFD600;
+    --error: #FF3D71;
+    
+    /* Shadow Effects */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+/* Base styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive Typography */
+html {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Responsive Grid */
+.grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Flexbox utilities */
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--gradient-secondary);
+    color: var(--bg-primary);
+}
+
+/* Card Styles */
+.card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Media Queries */
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hide-mobile {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 24px;
+    }
+}
+
+/* Small laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 32px;
+    }
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+/* Form elements */
+input, 
+select, 
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--text-muted);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(255, 60, 56, 0.2);
+}
+
+/* Responsive navigation utilities */
+.nav-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-desktop {
+        display: none;
+    }
+    
+    .nav-mobile {
+        display: block;
+    }
+}

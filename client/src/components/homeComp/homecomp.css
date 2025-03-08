@@ -1,0 +1,319 @@
+/* components/homeComp/homeComp.css */
+
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 80px 7% 20px;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.homeContainer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0.2;
+    border-radius: var(--radius-lg);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 8s linear infinite;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.feature-card h3 {
+    color: var(--accent-secondary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.homeCompContainer {
+    width: 100%;
+    max-width: 300px;
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: var(--radius-lg);
+    margin: 1rem auto;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.homeCompContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-secondary);
+}
+
+.imgCont {
+    height: 60px;
+    width: 60px;
+    background: var(--gradient-secondary);
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.imgCont img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.home {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.createButton,
+.viewButton {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    font-weight: 600;
+    border: 2px solid var(--accent-secondary);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    min-width: 200px;
+    text-decoration: none;
+}
+
+.createButton:hover,
+.viewButton:hover {
+    background: var(--gradient-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+}
+
+.createButton button,
+.viewButton button {
+    background: var(--accent-primary);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.createButton:hover button,
+.viewButton:hover button {
+    transform: rotate(90deg);
+    background: var(--bg-primary);
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .createButton,
+    .viewButton {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+    .homeContainer {
+        padding: 60px 5% 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .homeCompContainer {
+        padding: 1.5rem;
+    }
+
+    .createButton,
+    .viewButton {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
