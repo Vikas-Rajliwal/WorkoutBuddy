@@ -11,7 +11,7 @@ import entryRoute from "./routes/entries.js";
 import routineRoute from "./routes/routines.js";
 import mealRoute from "./routes/meals.js";
 import cookieParser from "cookie-parser";
-import cors from "cors"
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -19,25 +19,27 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 
 const connect = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO);
-        console.log("Connected to mongoDB.");
-    } catch (error) {
-        throw error;
-    }
+  try {
+    await mongoose.connect(process.env.MONGO);
+    console.log("Connected to mongoDB.");
+  } catch (error) {
+    throw error;
+  }
 };
 
 mongoose.connection.on("disconnected", () => {
-    console.log("mongoDB disconnected!");
+  console.log("mongoDB disconnected!");
 });
 
-app.get('/', (req, res) => { res.send('Hello from Express!') });
+app.get("/", (req, res) => {
+  res.send("Hello from Express!");
+});
 
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
 
-app.use(cors())
+app.use(cors());
 
 app.use(morgan("common"));
 
@@ -48,6 +50,6 @@ app.use("/api/routines", routineRoute);
 app.use("/api/meals", mealRoute);
 
 app.listen(PORT, () => {
-    console.log(`port is ${PORT}`);
-    connect();
+  console.log(`port is ${PORT}`);
+  connect();
 });
