@@ -5,11 +5,11 @@
   "license": "ISC",
   "author": "",
  
-  "main": "index.js",
+  "main": "server/index.js",
   "type": "module",
   "scripts": {
     
-    "start": "node index.js"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
