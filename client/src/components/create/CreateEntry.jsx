@@ -162,7 +162,7 @@ const CreateEntry = ({ setOpen }) => {
       };
 
       const response = await axios.post(
-        "https://workoutbuddy-l3uu.onrender.com/api/entries",
+        "http://localhost:8000/api/entries",
         entryData
       );
 

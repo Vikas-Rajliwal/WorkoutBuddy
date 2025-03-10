@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const Routines = () => {
   const { user } = useContext(AuthContext);
-  const { data } = useFetch(`https://workoutbuddy-l3uu.onrender.com/api/routines/${user._id}`);
+  const { data } = useFetch(`http://localhost:8000/api/routines/${user._id}`);
 
   return (
     <div className="routinesView">

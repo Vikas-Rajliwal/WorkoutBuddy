@@ -18,84 +18,84 @@ function Register() {
     const handleChange = (e) => {
         setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
     };
-    const handleClick = async (e) => {
-        e.preventDefault();
-    
-        try {
-            let profilePicture = null;
-    
-            if (file) {
-                const data = new FormData();
-                data.append("file", file);
-                data.append("upload_preset", "upload");
-    
-                const uploadRes = await axios.post(
-                    "your_cloudinary_api_link/image/upload",
-                    data,
-                    { withCredentials: false }
-                );
-    
-                profilePicture = uploadRes.data.url;
-            }
-    
-            const newUser = {
-                ...info,
-                ...(profilePicture && { profilePicture }),  // Add only if it exists
-            };
-    
-            await axios.post(
-                "https://workoutbuddy-l3uu.onrender.com/api/auth/register",
-                newUser,
-                { withCredentials: true }
-            );
-    
-            navigate("/Login");
-        } catch (err) {
-            console.error("Registration failed:", err);
-            alert("Error registering. Please try again.");
-        }
-    };
-    
-
     // const handleClick = async (e) => {
     //     e.preventDefault();
-
-    //     if (file) {
-    //         const data = new FormData();
-
-    //         data.append("file", file);
-    //         data.append("upload_preset", "upload");
-
-
-    //         try {
+    
+    //     try {
+    //         let profilePicture = null;
+    
+    //         if (file) {
+    //             const data = new FormData();
+    //             data.append("file", file);
+    //             data.append("upload_preset", "upload");
+    
     //             const uploadRes = await axios.post(
-    //                 "your api cloudnary api link/image/upload",
-    //                 data, { withcredentials: false }
+    //                 "your_cloudinary_api_link/image/upload",
+    //                 data,
+    //                 { withCredentials: false }
     //             );
-
-    //             const { url } = uploadRes.data;
-
-    //             const newUser = {
-    //                 ...info,
-    //                 profilePicture: url,
-    //             };
-
-    //             await axios.post("https://workoutbuddy-l3uu.onrender.com/api/auth/register", newUser, { withcredentials: true })
-
-    //             navigate("/login");
-    //         } catch (err) {
-    //             console.log(err);
+    
+    //             profilePicture = uploadRes.data.url;
     //         }
-    //     } else {
-    //         try {
-    //             await axios.post("https://workoutbuddy-l3uu.onrender.com/api/auth/register", info, { withcredentials: true })
-
-    //             navigate("/login");
-    //         } catch (err) {
-    //             console.log(err)
-    //         }
+    
+    //         const newUser = {
+    //             ...info,
+    //             ...(profilePicture && { profilePicture }),  // Add only if it exists
+    //         };
+    
+    //         await axios.post(
+    //             "http://localhost:8000/api/auth/register",
+    //             newUser,
+    //             { withCredentials: true }
+    //         );
+    
+    //         navigate("/Login");
+    //     } catch (err) {
+    //         console.error("Registration failed:", err);
+    //         alert("Error registering. Please try again.");
     //     }
     // };
+    
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+
+        if (file) {
+            const data = new FormData();
+
+            data.append("file", file);
+            data.append("upload_preset", "upload");
+
+
+            try {
+                const uploadRes = await axios.post(
+                    "your api cloudnary api link/image/upload",
+                    data, { withcredentials: false }
+                );
+
+                const { url } = uploadRes.data;
+
+                const newUser = {
+                    ...info,
+                    profilePicture: url,
+                };
+
+                await axios.post("http://localhost:8000/api/auth/register", newUser, { withcredentials: true })
+
+                navigate("/login");
+            } catch (err) {
+                console.log(err);
+            }
+        } else {
+            try {
+                await axios.post("http://localhost:8000/api/auth/register", info, { withcredentials: true })
+
+                navigate("/login");
+            } catch (err) {
+                console.log(err)
+            }
+        }
+    };
 
 
 

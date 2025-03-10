@@ -27,7 +27,7 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "https://workoutbuddy-l3uu.onrender.com/api/auth/login",
+        "http://localhost:8000/api/auth/login",
         credentials
       );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });

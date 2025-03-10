@@ -12,7 +12,7 @@ const Entries = () => {
   const { user } = useContext(AuthContext);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const { data, loading, error } = useFetch(
-    `https://workoutbuddy-l3uu.onrender.com/api/entries/${user?._id}`
+    `http://localhost:8000/api/entries/${user?._id}`
   );
 
   function formatDate(dateString) {
