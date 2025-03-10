@@ -40,10 +40,16 @@ app.use(express.json());
 app.use(helmet());
 
 app.use(cors({
-  origin: '*', // This allows all domains
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: "https://workout-buddy-vikas-projects-29e8e67d.vercel.app", // Allow only this specific frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true, // If you are using cookies or authentication
 }));
+// app.use(cors({
+//   origin: '*', // This allows all domains
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 
 app.use(morgan("common"));
 
